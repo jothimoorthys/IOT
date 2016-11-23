@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr,$log) {
+  function MainController($timeout, webDevTec, toastr,$log,$http) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -14,6 +14,7 @@
     vm.creationDate = 1479821555385;
     vm.showToastr = showToastr;
     vm.postMessage = postMessage;
+ //   vm.message=message;
 
     activate();
 
@@ -39,6 +40,8 @@
 
    function postMessage() {
         console.log('posted working');
+        console.log(vm.message);
+       $http.post('http://localhost:5000/api/message',{ message: vm.message});
     }
 
   }
