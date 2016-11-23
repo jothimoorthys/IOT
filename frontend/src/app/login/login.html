@@ -1,0 +1,23 @@
+<md-toolbar> </md-toolbar>
+<md-content layout="column" layout-align="center center">
+    <div flex="50">
+        <md-input-container>
+            <label>Username</label>
+            <input required="" name="username" ng-model="login.userName">
+            <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div flex="50">
+        <md-input-container>
+            <label>Password</label>
+            <input required="" name="password" ng-model="login.password"> </md-input-container>
+    </div>
+    <div layout="row">
+        <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Forgot Password</md-button>
+    </div>
+    <div layout="row">
+        <md-button class="md-raised md-primary">Login</md-button>
+    </div>
+</md-content>
