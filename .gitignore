@@ -5,3 +5,5 @@ frontend/.sass-cache/
 frontend/.idea/
 frontend/.tmp/
 frontend/dist/
+backend/node_modules/
+backend/bower_components/

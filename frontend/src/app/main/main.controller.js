@@ -1,18 +1,19 @@
 (function() {
-  'use strict';
+ // 'use strict';
 
   angular
     .module('frontResources')
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr,$log) {
     var vm = this;
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1479821555385;
     vm.showToastr = showToastr;
+    vm.postMessage = postMessage;
 
     activate();
 
@@ -35,5 +36,10 @@
         awesomeThing.rank = Math.random();
       });
     }
+
+   function postMessage() {
+        console.log('posted working');
+    }
+
   }
 })();
