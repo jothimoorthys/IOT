@@ -22,7 +22,7 @@ var Message = mongoose.model('Message', {
 
 // mongo db connection
 
-mongoose.connect('mongodb://localhost:27017/test', function (err, db) {
+mongoose.connect('mongodb://test:test@ds013918.mlab.com:13918/iot', function (err, db) {
     if (!err) {
         console.log('connected to mongo');
     }
