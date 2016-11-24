@@ -14,9 +14,12 @@
     vm.creationDate = 1479821555385;
     vm.showToastr = showToastr;
     vm.postMessage = postMessage;
- //   vm.message=message;
+    vm.getMessages= getMessages;
+
 
     activate();
+    vm.getMessages();
+
 
     function activate() {
       getWebDevTec();
@@ -38,10 +41,18 @@
       });
     }
 
+    function getMessages(){
+        $http.get('http://localhost:5000/api/message').then(function(result){
+            vm.messages=result.data;
+            console.log(result);
+        });
+     }
+
    function postMessage() {
         console.log('posted working');
-        console.log(vm.message);
-       $http.post('http://localhost:5000/api/message',{ message: vm.message});
+       $http.post('http://localhost:5000/api/message',{ msg: vm.message});
+               console.log(vm.message);
+
     }
 
   }

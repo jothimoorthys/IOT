@@ -22,8 +22,12 @@
     <div class="form-group">
     <label for="exampleTextarea">Example textarea</label>
     <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="main.message" ></textarea><br>
-    <input type="button" class="btn btn-primary" value="post" ng-click="main.postMessage()">
+    <input type="button" class="btn btn-primary" value="post" ng-click="main.postMessage(); main.getMessages();">
   </div>
+  <ul class="list-group">
+      <li class="list-group-item" ng-repeat="message in main.messages" > {{message.msg}} </li>
+  </ul>
+
 </div>
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
@@ -34,6 +38,7 @@
           <p>{{ awesomeThing.description }}</p>
           <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
         </div>
+
       </div>
     </div>
   </div>
